@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CBTD.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230808070347_AddedSeededCategoryData")]
-    partial class AddedSeededCategoryData
+    [Migration("20230809070046_addManufacturer")]
+    partial class addManufacturer
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,6 +61,39 @@ namespace CBTD.Migrations
                             CategoryId = 3,
                             CategoryName = "Snacks",
                             DisplayOrder = 3
+                        });
+                });
+
+            modelBuilder.Entity("CBTD.Models.Manufacturer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Manufacturers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Coca Cola"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Yellow Tail"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Frito Lay"
                         });
                 });
 #pragma warning restore 612, 618

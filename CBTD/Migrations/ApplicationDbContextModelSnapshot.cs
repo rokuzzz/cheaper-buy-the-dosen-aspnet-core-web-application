@@ -60,6 +60,39 @@ namespace CBTD.Migrations
                             DisplayOrder = 3
                         });
                 });
+
+            modelBuilder.Entity("CBTD.Models.Manufacturer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Manufacturers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Coca Cola"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Yellow Tail"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Frito Lay"
+                        });
+                });
 #pragma warning restore 612, 618
         }
     }
