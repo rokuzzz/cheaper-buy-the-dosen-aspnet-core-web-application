@@ -1,4 +1,4 @@
-﻿namespace CBTD.Models
+﻿namespace Infrastructure.Models
 {
     public class Manufacturer
     {

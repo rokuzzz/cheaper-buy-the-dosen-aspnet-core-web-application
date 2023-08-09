@@ -1,5 +1,5 @@
-using CBTD.Data;
-using CBTD.Models;
+using DataAccess.Data;
+using Infrastructure.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
