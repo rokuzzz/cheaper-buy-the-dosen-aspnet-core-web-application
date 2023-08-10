@@ -4,12 +4,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CBTD", "CBTD\CBTD.csproj", "{A83420E1-7172-41D5-82F1-6B64B7B47E5A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{04E9F81A-E539-445C-B9C3-547A869647A3} = {04E9F81A-E539-445C-B9C3-547A869647A3}
+		{302A654B-FC08-46DC-894D-907695904EC4} = {302A654B-FC08-46DC-894D-907695904EC4}
+		{8FA73EB3-C3E2-4921-ABEA-EADFB7E32F3C} = {8FA73EB3-C3E2-4921-ABEA-EADFB7E32F3C}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{04E9F81A-E539-445C-B9C3-547A869647A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{04E9F81A-E539-445C-B9C3-547A869647A3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{302A654B-FC08-46DC-894D-907695904EC4} = {302A654B-FC08-46DC-894D-907695904EC4}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{8FA73EB3-C3E2-4921-ABEA-EADFB7E32F3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utility", "Utility\Utility.csproj", "{8FA73EB3-C3E2-4921-ABEA-EADFB7E32F3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{302A654B-FC08-46DC-894D-907695904EC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{302A654B-FC08-46DC-894D-907695904EC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

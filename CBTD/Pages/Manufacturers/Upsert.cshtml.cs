@@ -1,5 +1,5 @@
 using DataAccess.Data;
-using Infrastructure.Models;
+using DataAccess.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -10,7 +10,6 @@ namespace CBTD.Pages.Manufacturers
         private readonly ApplicationDbContext _db;
         [BindProperty]  //synchonizes form fields with values in code behind
         public Manufacturer objManufacturer { get; set; }
-
 
         public UpsertModel(ApplicationDbContext db)  //dependency injection
         {

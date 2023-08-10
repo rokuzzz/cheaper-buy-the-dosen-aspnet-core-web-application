@@ -1,5 +1,5 @@
 using DataAccess.Data;
-using Infrastructure.Models;
+using DataAccess.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -34,6 +34,30 @@ public class UpsertModel : PageModel
 
         //create new mode
         return Page();
+    }
+
+    public IActionResult OnPost()
+    {
+        if (!ModelState.IsValid)
+        {
+            return Page();
+        }
+
+        //if this is a new Category
+        if (objCategory.CategoryId == 0)
+        {
+            _db.Categories.Add(objCategory);
+            TempData["success"] = "Category added Successfully";
+        }
+        //if category exists
+        else
+        {
+            _db.Categories.Update(objCategory);
+            TempData["success"] = "Category updated Successfully";
+        }
+        _db.SaveChanges();
+
+        return RedirectToPage("./Index");
     }
 
 }
