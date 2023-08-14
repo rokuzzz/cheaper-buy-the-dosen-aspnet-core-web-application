@@ -40,7 +40,7 @@ namespace Infrastructure
         {
             if (includes == null)   // we are not joining any objects
             {
-                if (trackChanges) // is set to false, we do not want EF tracking changes
+                if (!trackChanges) // is set to false, we do not want EF tracking changes
                 {
                     return _dbContext.Set<T>()
                       .Where(predicate)
@@ -87,7 +87,7 @@ namespace Infrastructure
         {
             if (includes == null)   // we are not joining any objects
             {
-                if (trackChanges) // is set to false, we're not tracking changes
+                if (!trackChanges) // is set to false, we're not tracking changes
                 {
                     return await _dbContext.Set<T>()
                       .Where(predicate)
