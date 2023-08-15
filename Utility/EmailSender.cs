@@ -10,7 +10,7 @@ public class EmailSender : IEmailSender
 
 	public EmailSender(IConfiguration _config)
 	{
-		SendGridSecret = _config.GetValue<string>("SendGrid:SecretKey");
+		SendGridSecret = Environment.GetEnvironmentVariable("SEND_GRID_SECRET_KEY") ?? "";
 	}
 
 	public Task SendEmailAsync(string email, string subject, string htmlMessage)

@@ -18,7 +18,7 @@ namespace Infrastructure
         private IGenericRepository<Product> _Product;
         private IGenericRepository<ApplicationUser> _ApplicationUser;
         private IGenericRepository<ShoppingCart> _ShoppingCart;
-        private IGenericRepository<OrderHeader> _OrderHeader;
+        private IOrderHeaderRepository<OrderHeader> _OrderHeader;
         private IGenericRepository<OrderDetails> _OrderDetails;
 
         public IGenericRepository<Category> Category
@@ -91,14 +91,14 @@ namespace Infrastructure
             }
         }
 
-        public IGenericRepository<OrderHeader> OrderHeader
+        public IOrderHeaderRepository<OrderHeader> OrderHeader
         {
             get
             {
 
                 if (_OrderHeader == null)
                 {
-                    _OrderHeader = new GenericRepository<OrderHeader>(_dbContext);
+                    _OrderHeader = new OrderHeaderRepository(_dbContext);
                 }
 
                 return _OrderHeader;
@@ -117,6 +117,8 @@ namespace Infrastructure
                 return _OrderDetails;
             }
         }
+
+        IOrderHeaderRepository<OrderHeader> IUnitOfWork.OrderHeader => throw new NotImplementedException();
 
         //ADD ADDITIONAL METHODS FOR EACH MODEL (similar to Category) HERE
 

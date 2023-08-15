@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Identity;
 using DataAccess;
 using Microsoft.AspNetCore.Identity.UI.Services;
 
+DotNetEnv.Env.TraversePath().Load();
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
