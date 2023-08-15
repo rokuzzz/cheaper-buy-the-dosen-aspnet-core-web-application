@@ -1,4 +1,5 @@
 ﻿using DataAccess.Data;
+using DataAccess.Models;
 using Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
@@ -238,9 +239,17 @@ namespace Infrastructure
                     return queryable.Where(predicate).OrderBy(orderBy).ToList();
                 }
             }
-
         }
-
+        public int DecrementCount(ShoppingCart shoppingCart, int count)
+        {
+            shoppingCart.Count -= count;
+            return shoppingCart.Count;
+        }
+        public int IncrementCount(ShoppingCart shoppingCart, int count)
+        {
+            shoppingCart.Count += count;
+            return shoppingCart.Count;
+        }
     }
 }
 
